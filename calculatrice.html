@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculatrice Marine</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .calc-screen { width: 100%; height: 50px; background: #000; color: #b026ff; border: 1px solid #b026ff; text-align: right; font-size: 24px; margin-bottom: 10px; padding: 5px; }
+        .buttons { display: grid; grid-template-columns: repeat(4, 1fr); gap: 5px; }
+    </style>
+</head>
+<body>
+    <div class="calc-container">
+        <h2 class="neon-title">CALCULATRICE NAVY</h2>
+        <input type="text" id="display" class="calc-screen" disabled>
+        <div class="buttons">
+            <button onclick="addToDisplay('7')">7</button><button onclick="addToDisplay('8')">8</button><button onclick="addToDisplay('9')">9</button><button onclick="addToDisplay('/')">/</button>
+            <button onclick="addToDisplay('4')">4</button><button onclick="addToDisplay('5')">5</button><button onclick="addToDisplay('6')">6</button><button onclick="addToDisplay('*')">*</button>
+            <button onclick="addToDisplay('1')">1</button><button onclick="addToDisplay('2')">2</button><button onclick="addToDisplay('3')">3</button><button onclick="addToDisplay('-')">-</button>
+            <button onclick="addToDisplay('0')">0</button><button onclick="addToDisplay('+')">+</button>
+            <button onclick="calculate()" style="grid-column: span 2;">=</button>
+            <button onclick="clearDisplay()" style="grid-column: span 4; background: red; color: white;">EFFACER</button>
+        </div>
+        <p id="secret-msg" style="margin-top: 15px; font-weight: bold; color: yellow;"></p>
+        <br>
+        <button onclick="window.location.href='carte.html'">ALLER À LA CARTE -></button>
+    </div>
+
+    <script>
+        let screen = document.getElementById('display');
+        function addToDisplay(val) { screen.value += val; }
+        function clearDisplay() { screen.value = ""; document.getElementById('secret-msg').innerText = ""; }
+        
+        function calculate() {
+            
+            if (screen.value === "27+7") {
+                document.getElementById('secret-msg').innerText = "Akainu aime porter des petites culottes";
+                screen.value = "34";
+                return;
+            }
+            try { screen.value = eval(screen.value); } 
+            catch { screen.value = "Erreur"; }
+        }
+    </script>
+</body>
+</html>

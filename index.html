@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Interface Navy - Connexion</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="login-box">
+        <img src="marine.png" alt="Logo Marine" style="width: 150px; margin-bottom: 20px;">
+        
+        <h1 class="neon-title">CONNEXION MARINE</h1>
+        <p>Entrez vos codes d'accès secret</p>
+        
+        <input type="text" id="user" placeholder="Nom d'utilisateur">
+        <input type="password" id="pass" placeholder="Mot de passe">
+        
+        <button onclick="valider()">SE CONNECTER</button>
+        <p id="erreur" style="color: #ff0055; display:none; margin-top:10px;">Identifiants incorrects !</p>
+    </div>
+
+    <div class="shop-section" style="margin-top: 50px; text-align: center;">
+        <h2 class="neon-title">BOUTIQUE DE FIGURINES</h2>
+        <div style="display: flex; gap: 20px; justify-content: center; align-items: center; flex-wrap: wrap;">
+            <div onclick="window.open('https://www.shin-sekai.fr/2543-one-piece')" style="cursor:pointer; border: 1px solid #b026ff; padding: 10px; border-radius: 10px;">
+                <p>-20% Avec Le Code: <strong>Koffi20</strong></p>
+                <img src="luffy.png" alt="Luffy" width="120" onerror="this.src='https://via.placeholder.com/120?text=Luffy+Image'">
+                <p style="font-size: 12px;">(Cliquez pour voir les figurines)</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

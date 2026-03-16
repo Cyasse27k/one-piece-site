@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Carte Marine de France</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .region { border: 1px solid #b026ff; padding: 15px; margin: 10px; cursor: pointer; transition: 0.3s; background: #1a1a1a; width: 300px;}
+        .region:hover { background: #b026ff; color: white; }
+    </style>
+</head>
+<body>
+    <h1 class="neon-title">DÉPLOIEMENT EN FRANCE</h1>
+    <p>Cliquez sur une zone pour voir les effectifs</p>
+
+    <div id="carte-liste">
+        <div class="region" onclick="showMarine('Normandie', 'Amiral Kizaru et 500 soldats.')">NORMANDIE</div>
+        <div class="region" onclick="showMarine('Bretagne', 'Vice-Amiral Garp (en vacances).')">BRETAGNE</div>
+        <div class="region" onclick="showMarine('Île-de-France', 'Le QG de Sengoku.')">ÎLE-DE-FRANCE</div>
+        <div class="region" onclick="showMarine('PACA', 'Akainu (il surveille les plages).')">PROVENCE-ALPES-CÔTE D'AZUR</div>
+        <div class="region" onclick="showMarine('Nouvelle Aquitaine', 'Koby chef de section temporaire, évacue les habitants.')">NOUVELLE AQUITAINE</div>
+        <div class="region" onclick="showMarine('Occitanie', 'Aucune information... Le signal est perdu.')">OCCITANIE</div>
+    </div>
+
+    <div id="info-marine" style="margin-top: 20px; font-size: 20px; border: 2px dashed #b026ff; padding: 20px; display: none;">
+        </div>
+
+    <br>
+    <button onclick="window.location.href='index.html'">RETOUR ACCUEIL</button>
+
+    <script>
+        function showMarine(nom, info) {
+            let box = document.getElementById('info-marine');
+            box.style.display = "block";
+            box.innerHTML = "<strong>Région : " + nom + "</strong><br>" + info;
+        }
+    </script>
+</body>
+</html>
